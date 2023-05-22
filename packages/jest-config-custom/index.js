@@ -1,0 +1,11 @@
+module.exports = {
+    testEnvironment: 'jest-environment-jsdom',
+    testPathIgnorePatterns: ['<rootDir>/node_modules/'],
+    extensionsToTreatAsEsm: ['.ts', '.tsx'],
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+    transformIgnorePatterns: [],
+    transform: {
+        '^.+\\.(t|j)sx?$': '@swc/jest',
+    },
+    testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|tsx|js)$',
+};

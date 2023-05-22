@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json.schemastore.org/swcrc",
+    "jsc": {
+      "parser": {
+        "syntax": "typescript",
+        "tsx": true,
+        "decorators": true,
+        "dynamicImport": false
+      },
+      "target": "es2016",
+      "loose": true,
+      "externalHelpers": true,
+      "keepClassNames": true
+    },
+    "minify": true
+}
