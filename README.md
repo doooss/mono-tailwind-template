@@ -1,4 +1,4 @@
-# Turborepo starter
+# Monorepo starter
 
 ## How to Update Packages
 
@@ -26,4 +26,4 @@
     pnpm add <package-name> --filter <package-name>
 ```
 
---filter 명령어는  build dev start 들 개별 명령어 모두 사용됩니다.
+--filter 명령어는 build dev start 들 개별 명령어 모두 사용됩니다.
