@@ -1,1 +1,1 @@
-module.exports = require('jest-config-custom');
+module.exports = require('@ds/config/jest/base.json');

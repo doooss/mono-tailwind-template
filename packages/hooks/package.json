@@ -1,11 +1,13 @@
 {
-  "name": "hooks",
+  "name": "@ds/hooks",
   "version": "0.0.0",
   "private": true,
+  "main": "./src/index.ts",
   "scripts": {
     "build": "turbo build",
     "test": "jest --passWithNoTests",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "lint": "eslint \"**/*.ts*\""
   },
   "devDependencies": {
     "@swc/jest": "^0.2.26",
@@ -16,9 +18,9 @@
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "eslint": "^8.41.0",
+    "eslint-config-custom": "workspace:*",
     "jest": "^29.5.0",
-    "jest-config-custom": "workspace:*",
-    "tsconfig": "workspace:*",
+    "@ds/config": "workspace:*",
     "typescript": "^5.0.4"
   },
   "dependencies": {

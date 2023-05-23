@@ -1,0 +1,13 @@
+{
+  "name": "@ds/config",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "./**/*.json"
+  ],
+  "dependencies": {
+    "@swc/jest": "^0.2.26",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0"
+  }
+}
