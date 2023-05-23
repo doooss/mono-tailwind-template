@@ -1,5 +1,6 @@
-import useBoolean from './useBoolean';
 import { act, renderHook } from '@testing-library/react';
+
+import useBoolean from './useBoolean';
 
 describe('useBoolean test', () => {
     it('should be defined', () => {
