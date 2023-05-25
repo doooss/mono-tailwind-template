@@ -27,3 +27,11 @@
 ```
 
 --filter 명령어는 build dev start 들 개별 명령어 모두 사용됩니다.
+
+## How to Add Component or Util file
+
+turbo gen 을 사용하면, 기존에 제작된 컴포넌트를 통해 쉽게 새 파일을 생각할 수 있습니다.
+
+```zsh
+    turbo zen
+```
