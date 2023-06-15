@@ -1,0 +1,19 @@
+name: push to prod
+on:
+    push:
+        tags:
+            - '*'
+jobs:
+    push:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Get tag
+              id: tag
+              uses: devops-actions/action-get-tag@v1.0.1
+            - uses: actions/checkout@v3
+              with:
+                  ref: prod
+                  fetch-depth: 0
+            - run: git reset --hard ${{ steps.tag.outputs.tag }}
+            - run: git push -f
