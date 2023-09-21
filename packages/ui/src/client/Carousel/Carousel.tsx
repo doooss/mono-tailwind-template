@@ -5,7 +5,7 @@ interface Props {
     children?: ReactNode;
 }
 
-const {{ pascalCase name }} = ({ children }: Props) => {
+const Carousel = ({ children }: Props) => {
     return (
         <div>
             {children}
@@ -13,4 +13,4 @@ const {{ pascalCase name }} = ({ children }: Props) => {
     );
 };
 
-export default {{ pascalCase name }};
+export default Carousel;

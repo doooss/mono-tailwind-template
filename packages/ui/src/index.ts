@@ -1,5 +1,6 @@
 // styles
 import './styles.css';
 
-export { default as Box } from './Box';
-export { default as Button } from './Button';
+export { default as Button } from './client/Button';
+export { default as Carousel } from './client/Carousel';
+export { default as Box } from './server/Box';
