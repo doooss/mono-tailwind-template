@@ -10,6 +10,7 @@
     "lint": "eslint \"**/*.ts*\""
   },
   "devDependencies": {
+    "@ds/config": "workspace:*",
     "@swc/jest": "^0.2.26",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
@@ -20,11 +21,11 @@
     "eslint": "^8.41.0",
     "eslint-config-custom": "workspace:*",
     "jest": "^29.5.0",
-    "@ds/config": "workspace:*",
-    "typescript": "^5.0.4",
     "next": "^13.4.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "turbo": "^1.10.4",
+    "typescript": "^5.0.4"
   },
   "peerDependencies": {
     "next": "^13.4.3",

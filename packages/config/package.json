@@ -9,5 +9,8 @@
     "@swc/jest": "^0.2.26",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0"
+  },
+  "devDependencies": {
+    "turbo": "^1.10.4"
   }
 }
