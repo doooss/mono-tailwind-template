@@ -1,6 +1,7 @@
+import { access } from 'node:fs';
 import { cp, mkdir, readdir } from 'node:fs/promises';
 
-import { select } from '@inquirer/prompts';
+import { confirm, select } from '@inquirer/prompts';
 import path from 'path';
 
 const main = async () => {
@@ -47,19 +48,31 @@ const main = async () => {
     const component = path.join(uiSrc, selected, selectedComponent);
     const targetPath = path.join(appSrc, target, 'src/components', selectedComponent);
 
-    try {
-        await mkdir(targetPath);
-        await cp(component, targetPath, {
-            filter: (file) => !file.includes('.stories'),
-            recursive: true,
-        });
-    } catch (e) {
-        await cp(component, targetPath, {
-            filter: (file) => !file.includes('.stories'),
-            recursive: true,
-        });
-    }
-    console.log(`${selectedComponent} has been copied to  ${targetPath} successfully!`);
+    access(targetPath, async (err) => {
+        if (err) {
+            await mkdir(targetPath, { recursive: true });
+            await cp(component, targetPath, {
+                filter: (file) => !file.includes('.stories'),
+                recursive: true,
+            });
+            console.log(`${selectedComponent} has been copied to  ${targetPath} successfully!`);
+        } else {
+            const proceed = await confirm({
+                message: `${selectedComponent} already exists, if you proceed, it will be overwritten. proceed (y/n)`,
+            });
+
+            if (proceed) {
+                await cp(component, targetPath, {
+                    filter: (file) => !file.includes('.stories'),
+                    recursive: true,
+                });
+                console.log(`${selectedComponent} has been copied to ${targetPath} successfully!`);
+            } else {
+                console.log('exit.');
+                process.exit(0);
+            }
+        }
+    });
 };
 
 main().catch((error) => {
