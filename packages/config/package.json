@@ -6,8 +6,8 @@
     "./**/*.json"
   ],
   "dependencies": {
-    "@swc/jest": "^0.2.26",
-    "jest": "^29.5.0",
+    "@swc/jest": "^0.2.29",
+    "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.5.0"
   },
   "devDependencies": {
