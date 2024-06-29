@@ -1,58 +1,33 @@
-# Turborepo Tailwind CSS starter
+# Monorepo starter
 
-This is an official starter Turborepo.
+## pnpm
 
-## Using this example
+이 프로젝트는 pnpm을 패키지 매니저로 사용할 수 있습니다.
 
-Run the following command:
+## How to Update Packages
 
-```sh
-npx create-turbo@latest -e with-tailwind
+패키지를 업데이트 하고 싶으면 -r 옵션을 사용하는 것이 효과적입니다.
+
+해당 옵션은 프로젝트 전체를 관찰하는 옵션입니다. add 의 경우 모든 프로젝트에 설치되며, update 를 사용하면 라이브러리가 적용된 프로젝트만 업데이트가 진행됩니다.
+
+```zsh
+    pnpm update <pacakge-name>@<update-version> -r
 ```
 
-## What's inside?
+## How to Add New Packages
 
-This Turborepo includes the following packages/apps:
+새로운 패키지를 추가 하고 싶으면 turbo gen 을 사용하는 것이 효과적입니다.
 
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Building packages/ui
-
-This example is set up to produce compiled styles for `ui` components into the `dist` directory. The component `.tsx` files are consumed by the Next.js apps directly using `transpilePackages` in `next.config.js`. This was chosen for several reasons:
-
-- Make sharing one `tailwind.config.js` to apps and packages as easy as possible.
-- Make package compilation simple by only depending on the Next.js Compiler and `tailwindcss`.
-- Ensure Tailwind classes do not overwrite each other. The `ui` package uses a `ui-` prefix for it's classes.
-- Maintain clear package export boundaries.
-
-Another option is to consume `packages/ui` directly from source without building. If using this option, you will need to update the `tailwind.config.js` in your apps to be aware of your package locations, so it can find all usages of the `tailwindcss` class names for CSS compilation.
-
-For example, in [tailwind.config.js](packages/tailwind-config/tailwind.config.js):
-
-```js
-  content: [
-    // app content
-    `src/**/*.{js,ts,jsx,tsx}`,
-    // include packages if not transpiling
-    "../../packages/ui/*.{js,ts,jsx,tsx}",
-  ],
+```zsh
+    turbo gen workspace --name <package-name>
 ```
 
-If you choose this strategy, you can remove the `tailwindcss` and `autoprefixer` dependencies from the `ui` package.
+## How to Add update seperate library
 
-### Utilities
+특정 패키지에 라이브러리를 추가하고 싶으면 --filter package-name 을 사용하면 됩니다.
 
-This Turborepo has some additional tools already setup for you:
+```zsh
+    pnpm add <package-name> --filter <package-name>
+```
 
-- [Tailwind CSS](https://tailwindcss.com/) for styles
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+--filter 명령어는 build dev start 들 개별 명령어 모두 사용됩니다.

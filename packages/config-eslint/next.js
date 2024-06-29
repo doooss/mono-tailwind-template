@@ -13,15 +13,12 @@ const project = resolve(process.cwd(), "tsconfig.json");
 
 module.exports = {
   extends: [
-    ...[
-      "@vercel/style-guide/eslint/node",
-      "@vercel/style-guide/eslint/typescript",
-      "@vercel/style-guide/eslint/browser",
-      "@vercel/style-guide/eslint/react",
-      "@vercel/style-guide/eslint/next",
-    ].map(require.resolve),
+    'next/core-web-vitals',
+    'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
     "turbo",
   ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     project,
   },
@@ -39,9 +36,20 @@ module.exports = {
       },
     },
   },
+  plugins: ['@typescript-eslint', 'simple-import-sort'],
   ignorePatterns: ["node_modules/", "dist/"],
   // add rules configurations here
   rules: {
-    "import/no-default-export": "off",
+    '@next/next/no-sync-scripts': 'off',
+    '@next/next/no-html-link-for-pages': 'off',
+    '@next/next/no-img-element': 'off',
+    'react/display-name': 'off',
+    'react-hooks/exhaustive-deps': 'off',
+    'react-hooks/rules-of-hooks': 'off',
+    'no-unused-expressions': 'error',
+    'react/self-closing-comp': 'warn',
+    'simple-import-sort/imports': 'warn',
+    'simple-import-sort/exports': 'warn',
+    'storybook/prefer-pascal-case': 'off',
   },
 };

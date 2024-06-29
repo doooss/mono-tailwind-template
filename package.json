@@ -6,7 +6,8 @@
     "lint": "turbo lint",
     "type-check": "turbo type-check",
     "clean": "turbo clean",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "gen": "turbo gen"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
@@ -17,5 +18,5 @@
   "engines": {
     "node": ">=18"
   },
-  "name": "with-tailwind"
+  "name": "tailwind-mono-template"
 }

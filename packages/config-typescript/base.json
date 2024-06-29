@@ -20,5 +20,6 @@
     "strict": true,
     "strictNullChecks": true
   },
-  "exclude": ["node_modules"]
+  "ignorePatterns": [".eslintrc.js"],
+  "exclude": ["node_modules", ".eslintrc.js", ".next"]
 }
