@@ -1,4 +1,5 @@
 name: AI Code Reviewer
+run-name: chatgpt-code-reviewer
 
 on:
   pull_request:
