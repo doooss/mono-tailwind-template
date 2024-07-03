@@ -6,7 +6,7 @@ on:
       - develop
       - main
     types:
-      - opened
+      - [opened]
 jobs:
   chatgpt-code-reviewer:
     runs-on: ubuntu-latest
