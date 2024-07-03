@@ -14,7 +14,7 @@ jobs:
         uses: magnificode-ltd/chatgpt-code-reviewer@v0.0.8
         with:
           model: gpt-4o
-          # max_tokens: 4096
+          max_tokens: 4096
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
